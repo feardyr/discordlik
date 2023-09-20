@@ -8,7 +8,6 @@ public class DiscordlikeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DiscordlikeApplication.class, args);
-		System.out.println("Hello world");
 	}
 
 }
