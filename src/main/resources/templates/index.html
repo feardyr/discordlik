@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversation Discord</title>
     <link rel="stylesheet" href="">
+    
     <style>
         /* Reset de certaines valeurs par défaut du navigateur */
 body, h1, h2, p {
@@ -101,48 +102,69 @@ footer {
 .chat::-webkit-scrollbar-track {
     background-color: #f0f0f0;
 }
+.sidebar {
+    width: 250px; /* Largeur de la sidebar */
+    height: 100%;
+    position: fixed; /* La sidebar reste fixée même lorsque vous faites défiler la page */
+    top: 0;
+    left: 0;
+    background-color: #333; /* Couleur de fond de la sidebar */
+    color: #fff; /* Couleur du texte */
+    padding-top: 60px; /* Espace en haut pour laisser de la place au header */
+}
 
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555; /* Couleur de fond au survol */
+}
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Paramètres</a></li>
+            <!-- Ajoutez d'autres liens ici -->
+        </ul>
+    </div>
     <header>
         <h1>Conversation Discord</h1>
     </header>
     <main>
-        Hello world [[ ${ user }]] !
-        Hello qsdfghjk [[ ${ password }]] !
 
-        <form a method="post">
-            <input type="text" name="username" id="">
-            <input type="text" name="password" id="">
-            <input type="submit" value="OK">
+        <section class="chat">
+
+                    <div th:each="message : ${message}" class="message">
+                        <p><strong th:text="${'Utilisateur ' + message.nom_utilisateur + ' :'}"></strong> <span th:text="${message.message}"></span></p>
+                    </div>
+                    
+            </div>
+
+        </section>
+      
+        <form method="post" action="/conv/moi">
+            <section class="message-input">
+
+            <input type="text" id="message" name="message" placeholder="Tapez votre message ici">
+            <button type="submit" id="send-button">Envoyer</button>
+        </section>
+
         </form>
         
-        <section class="chat">
-            <div class="message">
-                <p><strong>Utilisateur 1 :</strong> Salut, comment ça va ?</p>
-            </div>
-            <div class="message">
-                <p><strong>Utilisateur 2 :</strong> Ça va bien, merci ! Et toi ?</p>
-            </div>
-            <div>
-                Message de michel: [[ ${ message }]] !
-                Message de Moi : [[ ${ conversation }]] !
-                
-            </div>
-            <div th:each="book : ${conversation}">
-                <span th:text="${book.id}"> Title </span>
-                <span th:text="${book.texte}"> Author </span>
-
-            </div>
-            <!-- Ajoutez d'autres messages ici -->
-        </section>
-        <form  method="post">
-            <section class="message-input">
-                <input type="text" id="message" name="message" placeholder="Tapez votre message ici">
-                <button id="send-button">Envoyer</button>
-            </section>
-        </form>
     </main>
     <footer>
         <p>Créé par [Votre nom] &copy; 2023</p>

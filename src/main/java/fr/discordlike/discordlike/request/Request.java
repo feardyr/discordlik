@@ -11,7 +11,6 @@ public class Request {
     @NotBlank
     private String username;
 
-    @NotBlank
     private String password;
 
     private String message;
