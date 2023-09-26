@@ -102,43 +102,65 @@ footer {
 .chat::-webkit-scrollbar-track {
     background-color: #f0f0f0;
 }
-.sidebar {
-    width: 250px; /* Largeur de la sidebar */
-    height: 100%;
-    position: fixed; /* La sidebar reste fixée même lorsque vous faites défiler la page */
-    top: 0;
-    left: 0;
-    background-color: #333; /* Couleur de fond de la sidebar */
-    color: #fff; /* Couleur du texte */
-    padding-top: 60px; /* Espace en haut pour laisser de la place au header */
-}
+ /* Ajoutez ce CSS dans votre section <style> existante */
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
+    .sidebar-left {
+            width: 250px; /* Largeur de la sidebar à gauche */
+            height: 100%;
+            position: fixed; /* La sidebar reste fixée même lorsque vous faites défiler la page */
+            top: 0;
+            left: 0;
+            background-color: #333; /* Couleur de fond de la sidebar */
+            color: #fff; /* Couleur du texte */
+            padding-top: 60px; /* Espace en haut pour laisser de la place au header */
+        }
 
-.sidebar ul li {
-    padding: 10px;
-}
+        .sidebar-right {
+            width: 250px; /* Largeur de la sidebar à droite */
+            height: 100%;
+            position: fixed; /* La sidebar reste fixée même lorsque vous faites défiler la page */
+            top: 0;
+            right: 0; /* Positionné à droite de la page */
+            background-color: #333; /* Couleur de fond de la sidebar */
+            color: #fff; /* Couleur du texte */
+            padding-top: 60px; /* Espace en haut pour laisser de la place au header */
+        }
 
-.sidebar ul li a {
-    text-decoration: none;
-    color: #fff;
-}
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.sidebar ul li a:hover {
-    background-color: #555; /* Couleur de fond au survol */
-}
+        .sidebar ul li {
+            padding: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555; /* Couleur de fond au survol */
+        }
     </style>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar-left">
         <ul>
             <li><a href="#">Accueil</a></li>
             <li><a href="#">Profil</a></li>
             <li><a href="#">Paramètres</a></li>
             <!-- Ajoutez d'autres liens ici -->
+        </ul>
+    </div>
+    <div class="sidebar-right">
+        <h2>Liste des Utilisateurs</h2>
+        <ul>
+            <li><a href="#">Utilisateur 1</a></li>
+            <li><a href="#">Utilisateur 2</a></li>
+            <li><a href="#">Utilisateur 3</a></li>
+            <!-- Ajoutez d'autres utilisateurs ici -->
         </ul>
     </div>
     <header>
