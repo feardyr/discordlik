@@ -1,6 +1,5 @@
 package fr.discordlike.discordlike.response;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;

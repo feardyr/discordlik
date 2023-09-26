@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.discordlike.discordlike.model.Message;
 import fr.discordlike.discordlike.repo.MessageRepository;
-import fr.discordlike.discordlike.request.MessageRequest;
 
 @Controller
 @RequestMapping("/conv")
@@ -24,14 +23,8 @@ public class MessageController {
     @GetMapping("/omg")
     public String Conv(Model model){
         List<Message> conv = this.messageRepository.findAll()    ;
-       //  int message_id = request.getMessage_id();
         model.addAttribute("message", conv);
-      //  model.addAttribute("message_id", 25);
-       // model.addAttribute("user_id", 4);
-
-        // MessageApi test = new MessageApi();
-       // request.getMessage();
-       // test.add(request);
+      
         return "index";
     }
     
@@ -50,18 +43,6 @@ public String postHello2(@RequestParam("message") String messageText, Model mode
     return "redirect:/conv/omg";
 }
     
-    // @PostMapping("/moi")
-    // public String postHello2(MessageRequest request, Model model){
-    //     model.addAttribute("message", request.getMessage());
-    //     model.addAttribute("message_id",  request.getMessage_id());
-    //     model.addAttribute("user_id",  request.getUser_id());
-    //     model.addAttribute("username",  request.getUsername());
-
-        
-
-
-
-    //     return "index";
-    // }
+   
 
 }

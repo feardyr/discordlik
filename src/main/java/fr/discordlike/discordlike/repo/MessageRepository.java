@@ -1,14 +1,10 @@
 package fr.discordlike.discordlike.repo;
 
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import fr.discordlike.discordlike.model.Message;
-import fr.discordlike.discordlike.projection.MessageProjection;
 
-import java.util.List;
 
 
 public interface MessageRepository extends JpaRepository<Message, Integer> {

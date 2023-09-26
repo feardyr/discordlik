@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import fr.discordlike.discordlike.api.MessageApi;
 import fr.discordlike.discordlike.request.MessageRequest;
 import fr.discordlike.discordlike.request.Request;
 
@@ -54,7 +53,6 @@ public class Controller {
     }
 
 
-    private MessageRequest request;
 
     @GetMapping("/test")
     public String hello2(Model model){

@@ -1,7 +1,6 @@
 package fr.discordlike.discordlike.api;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,18 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.function.ServerResponse;
 
 import fr.discordlike.discordlike.model.Message;
-import fr.discordlike.discordlike.projection.MessageProjection;
 import fr.discordlike.discordlike.repo.MessageRepository;
 import fr.discordlike.discordlike.request.MessageRequest;
 import fr.discordlike.discordlike.response.MessageResponse;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @RestController
